@@ -2,17 +2,5 @@
   "name": "qmbot",
   "main": "src/index.js",
   "compatibility_date": "2025-06-01",
-  "containers": [
-    {
-      "class_name": "QMBot",
-      "image": "./Dockerfile",
-      "instance_type": "basic",
-      "max_instances": 1
-    }
-  ],
-  "durable_objects": {
-    "bindings": [{ "name": "QM_BOT", "class_name": "QMBot" }]
-  },
-  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["QMBot"] }],
-  "triggers": { "crons": ["*/5 * * * *"] }
+  "kv_namespaces": [{ "binding": "STATE" }]
 }
